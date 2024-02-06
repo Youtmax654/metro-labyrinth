@@ -1,6 +1,9 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
+const canvas = document.getElementById("labyrinth") as HTMLCanvasElement;
+let width = canvas.clientWidth;
+
 enum GamePhase {
   "SELECT_LANE",
   "MOVE_LANE",
@@ -749,13 +752,16 @@ class Game {
     this.window = window;
     this.scene = new THREE.Scene();
     this.raycaster = new THREE.Raycaster();
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      canvas: canvas,
+    });
+    this.renderer.setSize(width, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
 
     this.labyrinth = new Labyrinth(this.scene, 7);
 
-    const aspect = window.innerWidth / window.innerHeight;
+    const aspect = width / window.innerHeight;
     this.camera = new OrbitCamera(aspect, this.labyrinth, this.renderer);
 
     this.currentPawn = 0;
