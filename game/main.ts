@@ -1,5 +1,5 @@
-import * as EVENTS from "./events.js";
-import { Game, GamePhase } from "./objects.js";
+import * as EVENTS from "./events";
+import { Game, GamePhase } from "./objects";
 
 const canvas = document.getElementById("labyrinth") as HTMLCanvasElement;
 let width = canvas.clientWidth;

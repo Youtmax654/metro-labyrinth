@@ -4,6 +4,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 const canvas = document.getElementById("labyrinth") as HTMLCanvasElement;
 let width = canvas.clientWidth;
 
+function getImageUrl(name) {
+  return new URL(`./img/${name}.jpg`, import.meta.url).href;
+}
+
 enum GamePhase {
   "SELECT_LANE",
   "MOVE_LANE",
@@ -154,19 +158,19 @@ class Tile extends Entity {
     switch (this.type) {
       case TileType.STRAIGHT:
         this.mesh.material = new THREE.MeshBasicMaterial({
-          map: new THREE.TextureLoader().load("/straight.jpg"),
+          map: new THREE.TextureLoader().load(getImageUrl("straight")),
         });
         break;
 
       case TileType.CORNER:
         this.mesh.material = new THREE.MeshBasicMaterial({
-          map: new THREE.TextureLoader().load("/corner.jpg"),
+          map: new THREE.TextureLoader().load(getImageUrl("corner")),
         });
         break;
 
       case TileType.TJUNCTION:
         this.mesh.material = new THREE.MeshBasicMaterial({
-          map: new THREE.TextureLoader().load("/tjunction.jpg"),
+          map: new THREE.TextureLoader().load(getImageUrl("tjunction")),
         });
         break;
     }
