@@ -24,7 +24,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-document.addEventListener("click", (event) => EVENTS.movePlayer(event, game));
+canvas.addEventListener("click", (event) => EVENTS.movePlayer(event, game));
 
 function render() {
   requestAnimationFrame(render);

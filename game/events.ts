@@ -1,6 +1,10 @@
 import * as THREE from "three";
 import { Direction, Game, GamePhase, LaneAxis } from "./objects.js";
 
+const canvas = document.getElementById("labyrinth") as HTMLCanvasElement;
+let width = canvas.clientWidth;
+let height = canvas.clientHeight;
+
 export function selectLane(event: KeyboardEvent, game: Game) {
   switch (event.key) {
     case " ":
@@ -149,6 +153,7 @@ export function movePlayer(event: MouseEvent, game: Game) {
       (event.clientX / window.innerWidth) * 2 - 1,
       -(event.clientY / window.innerHeight) * 2 + 1
     );
+    console.log(ndc);
     game.raycaster.setFromCamera(ndc, game.camera.perspective);
 
     const pathFoundTilesMeshes = game.labyrinth.pathFoundTiles.map(

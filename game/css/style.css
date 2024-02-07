@@ -8,12 +8,32 @@ body {
   height: 100vh;
 }
 
-#information {
+#howToPlay {
   position: absolute;
   top: 10px;
   right: 10px;
   color: white;
   font-size: 30px;
+  cursor: pointer;
+}
+
+#howToPlay-content {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: white;
+  color: black;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+#howToPlay:hover + #howToPlay-content {
+  opacity: 1;
+  transition: opacity 0.3s;
+  transition-delay: 0.2s;
 }
 
 #sidebar {
