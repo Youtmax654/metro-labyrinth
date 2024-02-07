@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     window.addEventListener("scroll", function () {
-        var firstContainer = document.querySelector("section#second .firstContainer");
-        var secondContainer = document.querySelector("section#second .secondContainer");
+        let firstContainer = document.querySelector("section#second .firstContainer");
+        let secondContainer = document.querySelector("section#second .secondContainer");
 
-        var scrollPositionY = window.scrollY;
-        var firstContainerPosition = firstContainer.offsetTop;
-        var secondContainerPosition = secondContainer.offsetTop;
+        let scrollPositionY = window.scrollY;
+        let firstContainerPosition = firstContainer.offsetTop;
+        let secondContainerPosition = secondContainer.offsetTop;
 
         if (scrollPositionY > firstContainerPosition - 700) {
             firstContainer.firstElementChild.classList.add("fadeToLeftOpacity")
@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    var popUp = document.querySelector("popup.more");
-    var closePopUp = document.querySelector("popup.more i.fa-xmark");
-    var main = document.querySelector("main");
-    var button = document.querySelector("div.button");
+    let popUp = document.querySelector("popup.more");
+    let closePopUp = document.querySelector("popup.more i.fa-xmark");
+    let main = document.querySelector("main");
+    let button = document.querySelector("div.button");
 
     button.addEventListener("click", function () {
         main.classList.add("darken");

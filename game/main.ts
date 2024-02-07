@@ -31,3 +31,5 @@ function render() {
   game.render();
 }
 render();
+
+let returnButton = document.getElementById("return") as HTMLButtonElement;
