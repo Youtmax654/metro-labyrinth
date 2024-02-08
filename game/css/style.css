@@ -90,9 +90,17 @@ main {
   font-size: 30px;
   cursor: pointer;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  z-index: 1000;
 }
 
 #howToPlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  height: 0px;
   position: absolute;
   top: 40px;
   right: 40px;
@@ -100,13 +108,14 @@ main {
   color: black;
   font-size: 20px;
   border-radius: 10px;
-  padding: 10px;
   opacity: 0;
   transition: opacity 0.2s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
 }
 
 #howToPlay:hover + #howToPlay-content {
+  height: 400px;
   opacity: 1;
   transition: opacity 0.3s;
   transition-delay: 0.2s;
