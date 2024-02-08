@@ -148,7 +148,7 @@ export function moveLane(event: KeyboardEvent, game: Game) {
 export function movePlayer(event: MouseEvent, game: Game) {
   if (game.phase == GamePhase.MOVE_PLAYER) {
     let ndc = new THREE.Vector2(
-      (event.clientX / canvas.width) * 2 - 2.5,
+      (event.clientX / canvas.width) * 2 - 1.5,
       -(event.clientY / canvas.height) * 2 + 1
     );
     console.log(ndc);
