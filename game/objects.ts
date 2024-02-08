@@ -761,7 +761,8 @@ class Game {
       canvas: canvas,
     });
     this.renderer.setSize(width, window.innerHeight);
-    document.body.appendChild(this.renderer.domElement);
+    let main = document.getElementsByTagName("main")[0];
+    main.appendChild(this.renderer.domElement);
 
     this.labyrinth = new Labyrinth(this.scene, 7);
 

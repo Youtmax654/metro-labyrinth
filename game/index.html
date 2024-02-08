@@ -12,8 +12,7 @@
     <title>Metro Labyrinth</title>
   </head>
   <body>
-    <i class="fa-solid fa-square-question" id="howToPlay"></i>
-    <div id="howToPlay-content">
+    <popup id="howToPlay-popup" class="fadeFromTopOpacity">
       <h1>Comment jouer ?</h1>
       <p><strong>But du jeu :</strong> Trouver la sortie du labyrinthe.</p>
       <p>
@@ -24,93 +23,117 @@
         <strong>Conseil :</strong> Utilisez la touche "Espace" pour afficher la
         carte du labyrinthe.
       </p>
-    </div>
-    <div id="sidebar">
-      <h1>Metro Labyrinth</h1>
-      <div id="listOfPlayers">
-        <div class="objectives">
-          <h2>Username</h2>
-          <div class="line red">
-            <div class="stop">
-              <div class="light off"></div>
+      <div id="understoodButton" class="button">J'ai compris</div>
+    </popup>
+    <main class="darken">
+      <i class="fa-solid fa-square-question" id="howToPlay"></i>
+      <div id="howToPlay-content">
+        <h1>Comment jouer ?</h1>
+        <p><strong>But du jeu :</strong> Trouver la sortie du labyrinthe.</p>
+        <p>
+          <strong>Commandes :</strong> Utilisez les flèches directionnelles pour
+          vous déplacer.
+        </p>
+        <p>
+          <strong>Conseil :</strong> Utilisez la touche "Espace" pour afficher
+          la carte du labyrinthe.
+        </p>
+      </div>
+      <div id="sidebar">
+        <h1>Metro Labyrinth</h1>
+        <div id="listOfPlayers">
+          <div class="objectives">
+            <h2>Username</h2>
+            <div class="line red">
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
             </div>
-            <div class="stop">
-              <div class="light off"></div>
+          </div>
+          <div class="objectives">
+            <h2>Username</h2>
+            <div class="line blue">
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
             </div>
-            <div class="stop">
-              <div class="light off"></div>
+          </div>
+          <div class="objectives">
+            <h2>Username</h2>
+            <div class="line green">
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
             </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
+          </div>
+          <div class="objectives">
+            <h2>Username</h2>
+            <div class="line yellow">
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
+              <div class="stop">
+                <div class="light off"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="objectives">
-          <h2>Username</h2>
-          <div class="line blue">
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-          </div>
-        </div>
-        <div class="objectives">
-          <h2>Username</h2>
-          <div class="line green">
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-          </div>
-        </div>
-        <div class="objectives">
-          <h2>Username</h2>
-          <div class="line yellow">
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-            <div class="stop">
-              <div class="light off"></div>
-            </div>
-          </div>
+        <div id="chat">
+          <div class="messages"></div>
+          <form id="sendMessage" onsubmit="return false">
+            <input type="text" id="message" />
+            <button type="submit">
+              <i class="fa-solid fa-paper-plane-top"></i>
+            </button>
+          </form>
         </div>
       </div>
-      <div id="chat"></div>
-    </div>
-    <canvas id="labyrinth"></canvas>
+      <canvas id="labyrinth"></canvas>
+    </main>
   </body>
 </html>
