@@ -2,8 +2,6 @@ import * as THREE from "three";
 import { Direction, Game, GamePhase, LaneAxis } from "./objects.js";
 
 const canvas = document.getElementById("labyrinth") as HTMLCanvasElement;
-let width = canvas.clientWidth;
-let height = canvas.clientHeight;
 
 export function selectLane(event: KeyboardEvent, game: Game) {
   switch (event.key) {
@@ -150,8 +148,8 @@ export function moveLane(event: KeyboardEvent, game: Game) {
 export function movePlayer(event: MouseEvent, game: Game) {
   if (game.phase == GamePhase.MOVE_PLAYER) {
     let ndc = new THREE.Vector2(
-      (event.clientX / window.innerWidth) * 2 - 1,
-      -(event.clientY / window.innerHeight) * 2 + 1
+      (event.clientX / canvas.width) * 2 - 2.5,
+      -(event.clientY / canvas.height) * 2 + 1
     );
     console.log(ndc);
     game.raycaster.setFromCamera(ndc, game.camera.perspective);
