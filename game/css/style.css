@@ -100,7 +100,7 @@ main {
   align-items: center;
   text-align: center;
   width: 500px;
-  height: 0px;
+  height: 0;
   position: absolute;
   top: 40px;
   right: 40px;
@@ -109,7 +109,7 @@ main {
   font-size: 20px;
   border-radius: 10px;
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, height 0s 0.2s; /* Added transition-delay to height */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
 }
@@ -117,8 +117,7 @@ main {
 #howToPlay:hover + #howToPlay-content {
   height: 400px;
   opacity: 1;
-  transition: opacity 0.3s;
-  transition-delay: 0.2s;
+  transition: opacity 0.3s 0.2s, height 0s; /* Removed transition-delay from height */
 }
 
 #sidebar {
@@ -245,6 +244,19 @@ main {
 canvas#labyrinth {
   width: 80vw;
   height: 100vh;
+}
+
+#timer {
+  position: absolute;
+  top: 10px;
+  left: 400px;
+  font-size: 20px;
+  color: var(--text-color);
+  z-index: 1000;
+  padding: 10px;
+  background: var(--background-color);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 /* @media (prefers-color-scheme: dark) {
