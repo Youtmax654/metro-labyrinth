@@ -8,20 +8,21 @@
       rel="stylesheet"
       href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
     />
-    <script type="module" src="main.ts"></script>
+    <script type="module" src="main.ts" defer></script>
     <title>Metro Labyrinth</title>
   </head>
   <body>
     <popup id="howToPlay-popup" class="fadeFromTopOpacity">
       <h1>Comment jouer ?</h1>
-      <p><strong>But du jeu :</strong> Trouver la sortie du labyrinthe.</p>
       <p>
-        <strong>Commandes :</strong> Utilisez les flèches directionnelles pour
-        vous déplacer.
+        <strong>But du jeu :</strong> Revenir au point de départ en ayant
+        récupéré tout ses trésors
       </p>
       <p>
-        <strong>Conseil :</strong> Utilisez la touche "Espace" pour afficher la
-        carte du labyrinthe.
+        <strong>Commandes :</strong><br />
+        Utilisez les flèches directionnelles pour déplacer les tuiles. <br />
+        Utilisez la touche "Espace" pour tourner la tuile. <br />
+        Utilisez entrée pour valider votre choix.
       </p>
       <div id="understoodButton" class="button">J'ai compris</div>
     </popup>
@@ -29,14 +30,15 @@
       <i class="fa-solid fa-square-question" id="howToPlay"></i>
       <div id="howToPlay-content">
         <h1>Comment jouer ?</h1>
-        <p><strong>But du jeu :</strong> Trouver la sortie du labyrinthe.</p>
         <p>
-          <strong>Commandes :</strong> Utilisez les flèches directionnelles pour
-          vous déplacer.
+          <strong>But du jeu :</strong> Revenir au point de départ en ayant
+          récupéré tout ses trésors
         </p>
         <p>
-          <strong>Conseil :</strong> Utilisez la touche "Espace" pour afficher
-          la carte du labyrinthe.
+          <strong>Commandes :</strong><br />
+          Utilisez les flèches directionnelles pour déplacer les tuiles. <br />
+          Utilisez la touche "Espace" pour tourner la tuile. <br />
+          Utilisez entrée pour valider votre choix.
         </p>
       </div>
       <div id="sidebar">
@@ -45,81 +47,41 @@
           <div class="objectives">
             <h2>Username</h2>
             <div class="line red">
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
             </div>
           </div>
           <div class="objectives">
             <h2>Username</h2>
             <div class="line blue">
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
             </div>
           </div>
           <div class="objectives">
             <h2>Username</h2>
             <div class="line green">
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
             </div>
           </div>
           <div class="objectives">
             <h2>Username</h2>
             <div class="line yellow">
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
-              <div class="stop">
-                <div class="light off"></div>
-              </div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
+              <div class="stop"></div>
             </div>
           </div>
         </div>

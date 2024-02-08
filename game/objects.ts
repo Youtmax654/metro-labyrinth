@@ -755,6 +755,7 @@ class Game {
   constructor(window: Window) {
     this.window = window;
     this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(0xe8f1f2);
     this.raycaster = new THREE.Raycaster();
     this.renderer = new THREE.WebGLRenderer({
       antialias: true,

@@ -1,15 +1,22 @@
 @import url("/home/css/animation.css");
 
+:root {
+  --button-color: #990e41;
+  --background-color: white;
+  --text-color: black;
+  --border-color: rgba(0, 0, 0, 0.3);
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: black;
   margin: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   height: 100vh;
+  color: var(--text-color);
 }
 
 main {
@@ -33,7 +40,7 @@ main {
   z-index: 1000;
   width: 800px;
   height: 500px;
-  background: white;
+  background: var(--background-color);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -48,7 +55,7 @@ main {
 #howToPlay-popup .container {
   width: 800px;
   height: 500px;
-  background: white;
+  background: var(--background-color);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -65,8 +72,8 @@ main {
   width: 100px;
   height: 40px;
   line-height: 40px;
-  background: #b70b4b;
-  color: white;
+  background: var(--button-color);
+  color: var(--background-color);
   font-size: 16px;
   border: none;
   border-radius: 10px;
@@ -79,22 +86,24 @@ main {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: white;
+  color: var(--background-color);
   font-size: 30px;
   cursor: pointer;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
 
 #howToPlay-content {
   position: absolute;
   top: 40px;
   right: 40px;
-  background: white;
+  background: var(--background-color);
   color: black;
   font-size: 20px;
   border-radius: 10px;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #howToPlay:hover + #howToPlay-content {
@@ -104,11 +113,12 @@ main {
 }
 
 #sidebar {
-  width: 300px;
+  width: 20vw;
   height: 100vh;
-  background: chocolate;
+  background: var(--background-color);
   display: flex;
   flex-direction: column;
+  border-right: solid 1px var(--border-color);
 }
 
 #sidebar h1 {
@@ -134,7 +144,7 @@ main {
 }
 
 #sidebar #listOfPlayers > .objectives:not(:last-child) {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px var(--border-color);
 }
 
 #sidebar #listOfPlayers .objectives .line {
@@ -147,46 +157,33 @@ main {
 }
 
 #sidebar #listOfPlayers .objectives .line .stop {
-  width: 25px;
-  height: 25px;
+  width: 16px;
+  height: 16px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: white;
+  border: solid 4px black;
 }
 
 #sidebar #listOfPlayers .objectives .line > .stop:not(:last-child) {
   margin-right: 20px;
 }
 
-#sidebar #listOfPlayers .objectives .line .stop .light {
-  background: #f2c43a;
-  width: 17px;
-  height: 17px;
-  border-radius: 50px;
-}
-
-#sidebar #listOfPlayers .objectives .line .stop .off {
-  background: #7c7b7b !important;
-}
-
-#sidebar #listOfPlayers .red,
-#sidebar #listOfPlayers .red > .stop {
+#sidebar #listOfPlayers .red {
   background: #b70b4b;
 }
 
-#sidebar #listOfPlayers .blue,
-#sidebar #listOfPlayers .blue > .stop {
+#sidebar #listOfPlayers .blue {
   background: #0070b7;
 }
 
-#sidebar #listOfPlayers .green,
-#sidebar #listOfPlayers .green > .stop {
+#sidebar #listOfPlayers .green {
   background: #7bc698;
 }
 
-#sidebar #listOfPlayers .yellow,
-#sidebar #listOfPlayers .yellow > .stop {
+#sidebar #listOfPlayers .yellow {
   background: #ffcc0c;
 }
 
@@ -198,24 +195,24 @@ main {
   height: calc(100% - 60px);
   padding: 10px;
   overflow-y: auto;
-  background: #f2c43a;
+  background: var(--background-color);
 }
 
 #sidebar #chat #sendMessage {
+  border-top: solid 1px var(--border-color);
   display: flex;
   justify-content: center;
   height: 40px;
   align-items: center;
-  background: #f2c43a;
 }
 
 #sidebar #chat #sendMessage input {
   width: 80%;
   height: 100%;
   border: none;
-  border-radius: 5px;
   padding: 0 10px;
   font-size: 20px;
+  background: white;
 }
 
 #sidebar #chat #sendMessage input:focus {
@@ -226,17 +223,35 @@ main {
   width: 20%;
   height: 100%;
   border: none;
-  background: #b70b4b;
+  background: var(--button-color);
   color: white;
   font-size: 20px;
   cursor: pointer;
 }
 
 #sidebar > * {
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px var(--border-color);
 }
 
 canvas#labyrinth {
   width: 80vw;
   height: 100vh;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --button-color: #53dda9;
+    --background-color: #494949;
+    --text-color: white;
+    --border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  #sidebar #chat #sendMessage input {
+    background: rgb(155, 155, 155);
+    color: white;
+  }
+
+  #sidebar #chat #sendMessage button {
+    color: black;
+  }
+} */
