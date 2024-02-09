@@ -754,9 +754,8 @@ class Game {
   constructor(window: Window) {
     this.window = window;
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0xe8f1f2);
     this.raycaster = new THREE.Raycaster();
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setSize(GameContainer.clientWidth, window.innerHeight);
     let labyrinthDiv = document.getElementById("labyrinth");
     labyrinthDiv?.appendChild(this.renderer.domElement);
