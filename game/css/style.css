@@ -112,6 +112,7 @@ main {
   transition: opacity 0.2s, height 0s 0.2s; /* Added transition-delay to height */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
+  z-index: 1000;
 }
 
 #howToPlay:hover + #howToPlay-content {
