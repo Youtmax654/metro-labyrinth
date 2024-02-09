@@ -1,8 +1,8 @@
 import * as EVENTS from "./events";
 import { Game, GamePhase } from "./objects";
 
-const canvas = document.getElementById("labyrinth") as HTMLCanvasElement;
-let width = canvas.clientWidth;
+const GameContainer = document.querySelector("#labyrinth") as HTMLDivElement;
+let width = GameContainer.clientWidth;
 
 let game = new Game(window);
 
@@ -24,7 +24,9 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-canvas.addEventListener("click", (event) => EVENTS.movePlayer(event, game));
+GameContainer.addEventListener("click", (event) =>
+  EVENTS.movePlayer(event, game)
+);
 
 function render() {
   requestAnimationFrame(render);

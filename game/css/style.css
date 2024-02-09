@@ -241,7 +241,8 @@ main {
   border-bottom: solid 2px var(--border-color);
 }
 
-canvas#labyrinth {
+#labyrinth {
+  position: relative;
   width: 80vw;
   height: 100vh;
 }
@@ -249,7 +250,7 @@ canvas#labyrinth {
 #timer {
   position: absolute;
   top: 10px;
-  left: 400px;
+  left: 10px;
   font-size: 20px;
   color: var(--text-color);
   z-index: 1000;

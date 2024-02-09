@@ -1,8 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-const canvas = document.getElementById("labyrinth") as HTMLCanvasElement;
-let width = canvas.clientWidth;
+const GameContainer = document.querySelector("#labyrinth") as HTMLDivElement;
 
 function getImageUrl(name) {
   return new URL(`./img/${name}.jpg`, import.meta.url).href;
@@ -757,17 +756,14 @@ class Game {
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xe8f1f2);
     this.raycaster = new THREE.Raycaster();
-    this.renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      canvas: canvas,
-    });
-    this.renderer.setSize(width, window.innerHeight);
-    let main = document.getElementsByTagName("main")[0];
-    main.appendChild(this.renderer.domElement);
+    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer.setSize(GameContainer.clientWidth, window.innerHeight);
+    let labyrinthDiv = document.getElementById("labyrinth");
+    labyrinthDiv?.appendChild(this.renderer.domElement);
 
     this.labyrinth = new Labyrinth(this.scene, 7);
 
-    const aspect = width / window.innerHeight;
+    const aspect = GameContainer.clientWidth / window.innerHeight;
     this.camera = new OrbitCamera(aspect, this.labyrinth, this.renderer);
 
     this.currentPawn = 0;
